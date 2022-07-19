@@ -48,6 +48,7 @@ Esse valor é usado nas definições do simulador Falstad
 Depois é calculada a tensão de pico do circuito, ![Tensão de pico](imagens/tensao_pico.svg), dessa tensão são retirados 1.4V, dado que em cada ciclo ocorre a passagem por 2 diodos. ![Subtração diodos](imagens/subtracao_diodos.svg)
 
 Em seguida deve-se calcular a capacitância necessária para a filtragem do circuito, que pode ser obtida pela seguinte fórmula:
+
 ![Fórmula capacitância](imagens/formula_capacitancia.svg)
 
 - Io - Corrente de saída
@@ -55,15 +56,21 @@ Em seguida deve-se calcular a capacitância necessária para a filtragem do circ
 - f - frequência da fonte, no caso 60hz
 
 Para a obtenção da corrente, são somadas a corrente no led, no diodo zener e na saída do carregador.
+
 ![Lei de Kirchoff](imagens/lei_de_kirchoff.svg)
 
 - Para a corrente do led, usamos a Lei de Ohm, subtraindo 3.1 (queda aproximada no led) da tensão de pico e dividindo pelo resistor
+
 ![Corrente Led](imagens/corrente_led.svg)
+
 - A corrente no Zener também é obtida pela Lei de Ohm, são subtraidos 13V (breakthrough voltage) e é feita a divisão pelo resistor. O resistor do Zener foi obtido simulando o circuito no Falstad e ajustando os valores entre resistores comerciais até obter um sistema capaz de atender as especificações.
+
 ![Corrente Diodo Zener](imagens/corrente_zener.svg)
+
 - Por definição, Ic deve ser de 100mA
 
 ![Corrente total](imagens/corrente_total.svg)
+
 ![Capacitancia](imagens/capacitancia.svg)
 
 Dado que este não é um valor comercial de capacitores, na fonte foi usado um capacitor de 470µF.
